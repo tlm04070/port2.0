@@ -1,0 +1,156 @@
+.card{
+    perspective: 100rem;
+    -moz-perspective: 150rem;
+    position: relative;
+    height: 60rem;
+
+
+    &__side{
+        font-size: 2rem;
+        height: 60rem;
+        transition: all .3s ease;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        backface-visibility: hidden;
+        border-radius: 3px;
+        overflow: hidden;
+        box-shadow: 0 1.5rem 4rem rgba($color-black, .15);
+
+        
+
+        &--front{
+            background-image: linear-gradient(to right bottom, 
+                rgba($color-primary, 0.75), 
+                rgba($color-primary-dark, 0.75));
+        }
+
+        &--back{
+            background-image: linear-gradient(to right bottom, 
+                rgba($color-secondary, 0.75), 
+                rgba($color-secondary-dark, 0.75));
+            transform: rotateY(180deg);
+
+        }
+    }
+
+    &:hover &__side--front {
+        // transform: rotateY(-180deg);
+        transform: scale(1.05) translateY(5px);
+        outline: .5rem solid $color-tertiary;
+
+        
+        
+    }
+
+    // &:hover &__side--back {
+    //     transform: rotateY(0deg);
+    //    
+    // }
+
+    &__picture{
+        background-size: cover;
+        height: 23rem;
+
+        &--1{
+            background-image: linear-gradient(to right bottom, 
+            rgba($color-secondary, 0.10), 
+            rgba($color-secondary-dark, 0.10)),
+            url(../img/detaildevil.png);
+            clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+        }
+        &--2{
+            background-image: linear-gradient(to right bottom, 
+            rgba($color-secondary, 0.10), 
+            rgba($color-secondary-dark, 0.10)),
+            url(../img/GiftList.png);
+            clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+        }
+        &--3{
+            background-image: linear-gradient(to right bottom, 
+            rgba($color-secondary, 0.10), 
+            rgba($color-secondary-dark, 0.10)),
+            url(../img/eventhub.png);
+            clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+        }
+    }
+
+    &__heading {
+        font-size: 2.8rem;
+        font-weight: 400;
+        text-transform: uppercase;
+        text-align: right;
+        color: $color-white;
+        position: absolute;
+        top: 12rem;
+        right: 2rem;
+    }
+
+    &__heading-span {
+        padding: 1rem;
+        transition: all .4s;
+        
+        a{
+            text-decoration: none;
+            color: $color-white;
+            // transition: all .4s;
+
+            &:hover{
+                color: $color-white;
+                // background-color: $color-tertiary;
+            }
+        }
+        &--1 {
+            background-image: linear-gradient(to right bottom, rgba($color-secondary, 0.85), 
+            rgba($color-secondary-dark, 0.85));
+            
+
+
+            &:hover{
+                background-image: linear-gradient(to right bottom, rgba($color-tertiary, 0.85), 
+            rgba($color-tertiary, 0.85));
+            border: 3px solid $color-white;
+            box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.50);
+            }
+        }
+    }
+
+    &__details {
+        padding: 3rem;
+        ul{
+            list-style: none;
+            width: 80%;
+            margin: 0 auto;
+            li{
+            text-align: center;
+            font-size: 1.5rem;
+            padding: 1rem;
+            color: $color-white;
+
+            &:not(:last-child){
+                border-bottom: 1px solid $color-dark;
+            }
+            &:first-child{
+                margin-top: -1.5rem;
+            }
+            }
+        }
+    }
+    &__link{
+        text-align: center;
+    }    
+    &__link--repo{
+            text-decoration: none;
+            display: inline-block;
+            color: $color-white;
+            border-bottom: 2px solid $color-tertiary;
+            text-align: center;
+            transition: all .4s;
+            
+            &:hover{
+                background-color: $color-tertiary;
+                border-radius: 5px;
+            }
+    }
+}
